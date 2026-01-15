@@ -37,9 +37,7 @@ export const useCountStore = create(
         storage: createJSONStorage(() => sessionStorage),
       },
     ),
-    {
-      name: "countStore",
-    },
+    
   ),
 );
 
