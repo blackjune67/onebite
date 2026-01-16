@@ -1,0 +1,12 @@
+export default function TodoItem(
+    {
+        id,
+        content
+    }: {
+id: number;
+content: string;
+    }) {
+    return <div>{content}
+    <Button></Button>
+    </div>;
+}

@@ -1,5 +1,4 @@
 import TodoEditor from "@/components/todo-list/todo-editor";
-import TodoItem from "@/components/todo-list/todo-item";
 
 const dummyTodos = [
   {
@@ -13,17 +12,15 @@ const dummyTodos = [
   {
     id: 3,
     content: "TODO 3",
-  },
-];
+  }
+]
 
 export default function TodoListPage() {
   return (
     <div className="flex flex-col gap-5 p-5">
       <h1 className="text-2xml font-bold">TodoList</h1>
       <TodoEditor />
-      {dummyTodos.map((todo) => (
-        <TodoItem key={todo.id} {...todo} />
-      ))}
+      {dummyTodos.map(() => )}
     </div>
   );
 }
