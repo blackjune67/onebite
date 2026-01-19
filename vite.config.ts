@@ -14,7 +14,12 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  optimizeDeps: {
-    include: ["immer"],
+  server: {
+    watch: {
+      ignored: ["**/server/**"],
+    },
   },
+  /* optimizeDeps: {
+    include: ["immer"],
+  }, */
 });
