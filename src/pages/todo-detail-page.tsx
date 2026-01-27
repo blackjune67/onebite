@@ -1,7 +1,13 @@
+import { useTodoDataById } from "@/hooks/quries/use-todo-data-by-id";
 import { useParams } from "react-router-dom";
 
 export default function TodoDetailPage() {
-    const params = useParams();
-    const id = params.id();
-    return <div>TodoDetailPage</div>;
+  const params = useParams();
+  const id = params.id;
+  const { data, isLoading, error } = useTodoDataById(String(id));
+
+  if (isLoading) return <div>로딩 중입니다 ...</div>;
+  if (error || !data) return <div>오류가 발생했습니다.</div>;
+
+  return <div>TodoDetailPage</div>;
 }

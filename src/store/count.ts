@@ -26,8 +26,8 @@ export const useCountStore = create(
                 });
               },
             },
-          })),
-        ),
+          }))
+        )
       ),
       {
         name: "countStore",
@@ -35,12 +35,12 @@ export const useCountStore = create(
           count: store.count,
         }),
         storage: createJSONStorage(() => sessionStorage),
-      },
+      }
     ),
     {
       name: "countStore",
-    },
-  ),
+    }
+  )
 );
 
 useCountStore.subscribe(
@@ -50,7 +50,7 @@ useCountStore.subscribe(
 
     const store = useCountStore.getState();
     console.log("==> store", store);
-  },
+  }
 );
 
 export const useCount = () => {
