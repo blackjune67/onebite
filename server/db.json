@@ -1,29 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "667d",
-      "content": "zzzzddddd",
-      "isDone": true
-    },
-    {
-      "id": "d584",
-      "content": "오호라?",
-      "isDone": true
-    },
-    {
-      "id": "a174",
-      "content": "이게 머선일이야??",
-      "isDone": true
-    },
-    {
-      "id": "cb39",
-      "content": "ㅇㅇㅇ",
-      "isDone": true
-    },
-    {
-      "id": "9ade",
-      "content": "???",
-      "isDone": true
-    }
-  ]
+  "todos": []
 }
