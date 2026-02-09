@@ -11,11 +11,22 @@ export default function useCreateTodoMutation() {
     onMutate: () => {},
     onSettled: () => {},
     onSuccess: (newTodo) => {
-      queryClient.setQueryData<Todo[]>(QUERY_KEYS.todo.list, (prevTodos) => {
-        if (!prevTodos) return [newTodo];
-        if (prevTodos.some((todo) => todo.id === newTodo.id)) return prevTodos;
-        return [...prevTodos, newTodo];
-      });
+      queryClient.setQueryData<Todo>(
+        QUERY_KEYS.todo.detail(newTodo.id),
+        newTodo
+      );
+      queryClient.setQueryData<string[]>(
+        QUERY_KEYS.todo.list,
+        (prevTodosIds) => {
+          if (!prevTodosIds) return [newTodo.id];
+          return [...prevTodosIds, newTodo.id];
+        }
+      );
+      // queryClient.setQueryData<Todo[]>(QUERY_KEYS.todo.list, (prevTodos) => {
+      //   if (!prevTodos) return [newTodo];
+      //   if (prevTodos.some((todo) => todo.id === newTodo.id)) return prevTodos;
+      //   return [...prevTodos, newTodo];
+      // });
     },
     onError: (error) => {
       window.alert(error.message);
